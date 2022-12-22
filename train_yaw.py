@@ -255,7 +255,7 @@ def train(pred_model):
     x_acc, x_acc_val, x_gyro, x_gyro_val, x_mag, x_mag_val, x_fs, x_fs_val, Head_quat, Head_quat_val = train_test_split(
         x_acc, x_gyro, x_mag, x_fs, quat, test_size=0.2, random_state=42, shuffle=True)
     model_checkpoint = ModelCheckpoint(
-        'model_checkpoint.hdf5', monitor='val_loss', verbose=1, save_best_only=True)
+        'models/model_checkpoint.hdf5', monitor='val_loss', verbose=1, save_best_only=True)
     # tensorboard
     tensorboard = TensorBoard(log_dir="./logs/yaw/%s_%s" % (timestr,
                                                             pred_model.__name__),
@@ -297,7 +297,7 @@ def train(pred_model):
     plt.ylabel('Loss')
     plt.xlabel('Epoch')
     plt.legend(['Train', 'Validation'], loc='upper left')
-    plt.savefig(f'loss_%s_B%s_E%s_V%s.png' %
+    plt.savefig(f'Loss/loss_%s_B%s_E%s_V%s.png' %
                 (pred_model.__name__, batch_size, epochs, version))
     # plt.show()
 
