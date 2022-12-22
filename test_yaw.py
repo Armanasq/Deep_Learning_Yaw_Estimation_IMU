@@ -247,7 +247,7 @@ def main():
         model = model_load()
         headq = Head(quat_ref)
         quat_pred = model.predict(
-            [mag, fs], batch_size=500, verbose=1)
+            [acc, gyro, mag, fs], batch_size=500, verbose=1)
         _, _, yaw = quat2eul(quat_ref)
         roll_pred, pitch_pred, yaw_pred = quat2eul(quat_pred)
         plt.figure()
