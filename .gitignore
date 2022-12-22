@@ -1,0 +1,6 @@
+
+logs/yaw/2022-12-22-21-47-10_CNN_LSTM_yaw_mag/validation/events.out.tfevents.1671733118.arman-GT73EVR-7RE.264725.1.v2
+model_checkpoint.hdf5
+*.pyc
+*.v2
+*.h5
